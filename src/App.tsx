@@ -2,12 +2,13 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { UserCard } from './UserCard'
-import { SearchBar } from './SearchBar'
+import { UserCard } from './components/UserCard/UserCard'
+import { SearchBar } from './components/SearchBar/SearchBar'
+import type { User } from './types'
 
 
 
-const users = [
+const users :User[] = [
   {
     id: 1,
     name: 'armughan',

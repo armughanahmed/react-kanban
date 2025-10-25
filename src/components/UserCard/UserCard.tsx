@@ -1,8 +1,6 @@
-type UserCardProps = {
-    id: number,
-    name: string,
-    email: string
-}
+import type { User } from "../../types"
+
+type UserCardProps = User
 
 export function UserCard({name,email}:UserCardProps){
     return (
