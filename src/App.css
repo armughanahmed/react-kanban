@@ -40,3 +40,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.card.dark-mode{
+  background: #333;
+  color: white;
+}

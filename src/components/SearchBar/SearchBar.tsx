@@ -1,9 +1,28 @@
-type SearchBarProps = {
-    onQueryChange : (text:string) => void
-}
+import { useRef } from "react";
 
-export function SearchBar({onQueryChange}:SearchBarProps){
-    return(
-        <input type="text" placeholder="Search users..." onChange={(e)=> onQueryChange(e.target.value)}/>
-    )
+type SearchBarProps = {
+  onQueryChange: (text: string) => void;
+  query: string;
+};
+
+export function SearchBar({ query, onQueryChange }: SearchBarProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  function onClearButton() {
+    onQueryChange("");
+    inputRef.current?.focus();
+  }
+
+  return (
+    <div>
+      <input
+        type="text"
+        ref={inputRef}
+        value={query}
+        placeholder="Search users..."
+        onChange={(e) => onQueryChange(e.target.value)}
+      />
+      <button onClick={onClearButton}>Clear</button>
+    </div>
+  );
 }
